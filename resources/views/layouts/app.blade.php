@@ -10,6 +10,6 @@
 <body>
     @include('partials/header')
     @yield('content')
-    @include('partials/header')
+    @include('partials/footer')
 </body>
 </html>
