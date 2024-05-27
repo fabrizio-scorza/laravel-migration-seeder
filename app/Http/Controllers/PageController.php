@@ -11,7 +11,7 @@ class PageController extends Controller
     public function home()
     {
         // tramite il model prendo i dati della tabella train e li metto nella variabile trains
-        $trains = Train::all();
+        $trains = Train::whereDate('orario_di_partenza', today())->get();
 
         // ritorno la vista e i dati
         return view('home', compact('trains'));
