@@ -37,7 +37,7 @@ class TrainSeeder extends Seeder
 
             $new_train->orario_di_partenza = $partenza;
 
-            $new_train->orario_di_arrivo = $faker->dateTimeBetween($partenza, '+36 hours');
+            // $new_train->orario_di_arrivo = $faker->dateTimeBetween($partenza, '+36 hours');
 
             $new_train->codice_treno = $faker->unique()->bothify('??-#####');
 
