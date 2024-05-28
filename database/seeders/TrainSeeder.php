@@ -32,12 +32,11 @@ class TrainSeeder extends Seeder
 
             $new_train->stazione_di_arrivo = $faker->city();
 
-            // assegno il random della data ad una variabile per usarla anche come parametro di riferimento nella data di arrivo
-            $partenza = $faker->dateTimeBetween(now(), '+15 days');
+            $startDate = $faker->dateTimeInInterval(now(), '+15 days');
+            $new_train->orario_di_partenza = $startDate;
 
-            $new_train->orario_di_partenza = $partenza;
-
-            // $new_train->orario_di_arrivo = $faker->dateTimeBetween($partenza, '+36 hours');
+            $new_train->orario_di_arrivo = $faker->dateTimeInInterval($startDate, '+36 hours');
+            //$new_train->orario_di_arrivo = $faker->dateTimeBetween(now(), '+15 days');
 
             $new_train->codice_treno = $faker->unique()->bothify('??-#####');
 
